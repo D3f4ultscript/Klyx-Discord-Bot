@@ -23,6 +23,9 @@ Klyx only stores what it needs to work.
 | Security events | Show admins what the security features did | Server ID, user ID, type of event (for example raid, scam link, quarantine), a short description, time. Klyx keeps the last 300 per server |
 | Quarantine | Give members their roles back after a quarantine | Server ID, user ID, the IDs of the removed roles, reason, time |
 | Verification | Kick members who do not verify in time, if the admin turned that on | Server ID, user ID, join time. Deleted once the member verifies or leaves |
+| Saved roles | Give members their roles back when they rejoin, if the admin turned that on | Server ID, user ID, role IDs, time. Deleted after rejoining or after 30 days |
+| AutoMod violations | Punish repeated rule breaking harder, if the admin set up escalation | Server ID, user ID, time of each violation. Deleted after 7 days |
+| Temporary roles | Remove a role again when its time is up | Server ID, user ID, role ID, end time |
 | Server backups | Rebuild roles and channels after an attack | Names, permissions and settings of roles, categories and channels. No members and no messages. Klyx keeps the last 5 per server |
 
 Klyx does **not** store the content of chat messages in its database. Messages are read in memory to run AutoMod, the scam link filter and the level system and are discarded afterwards.
@@ -31,7 +34,7 @@ To detect scam links, Klyx downloads public lists of known scam domains every fe
 
 ## 2. Content that Klyx posts to your server
 
-If a server admin turns on the server log or the moderation log, Klyx posts embeds to the log channel the admin chose. These can contain the text of deleted or edited messages, AutoMod hits and moderation actions. This content stays inside that Discord server and is controlled by the server's admins. When a ticket is closed, a text transcript is posted to the log channel chosen by the admin and is not kept by Klyx.
+If a server admin turns on the server log or the moderation log, Klyx posts embeds to the log channel the admin chose. These can contain the text of deleted or edited messages, AutoMod hits and moderation actions. This content stays inside that Discord server and is controlled by the server's admins. When a ticket is closed, a text transcript is posted to the log channel chosen by the admin and is not kept by Klyx. When a member reports a message, Klyx posts its text, author and a link to it in the report channel chosen by the admin.
 
 ## 3. Dashboard login
 
@@ -90,6 +93,9 @@ Klyx speichert nur, was es zum Funktionieren braucht.
 | Sicherheits-Ereignisse | Admins zeigen, was die Sicherheitsfunktionen getan haben | Server-ID, Nutzer-ID, Art des Ereignisses (zum Beispiel Raid, Betrugs-Link, Quarantäne), kurze Beschreibung, Zeit. Klyx behält die letzten 300 pro Server |
 | Quarantäne | Mitgliedern nach einer Quarantäne ihre Rollen zurückgeben | Server-ID, Nutzer-ID, IDs der entfernten Rollen, Grund, Zeit |
 | Verifizierung | Mitglieder kicken, die sich nicht rechtzeitig verifizieren, wenn der Admin das eingeschaltet hat | Server-ID, Nutzer-ID, Beitrittszeit. Wird gelöscht, sobald das Mitglied sich verifiziert oder geht |
+| Gespeicherte Rollen | Mitgliedern ihre Rollen zurückgeben, wenn sie wieder beitreten, falls der Admin das eingeschaltet hat | Server-ID, Nutzer-ID, Rollen-IDs, Zeit. Gelöscht nach dem Wiederbeitritt oder nach 30 Tagen |
+| AutoMod-Verstöße | Wiederholte Verstöße härter bestrafen, falls der Admin eine Steigerung eingerichtet hat | Server-ID, Nutzer-ID, Zeitpunkt jedes Verstoßes. Gelöscht nach 7 Tagen |
+| Rollen auf Zeit | Eine Rolle wieder entfernen, wenn ihre Zeit abgelaufen ist | Server-ID, Nutzer-ID, Rollen-ID, Ablaufzeit |
 | Server-Backups | Rollen und Kanäle nach einem Angriff wiederherstellen | Namen, Rechte und Einstellungen von Rollen, Kategorien und Kanälen. Keine Mitglieder und keine Nachrichten. Klyx behält die letzten 5 pro Server |
 
 Klyx speichert den Inhalt von Chat-Nachrichten **nicht** in der Datenbank. Nachrichten werden im Arbeitsspeicher für AutoMod, den Betrugs-Link-Filter und das Level-System gelesen und danach verworfen.
@@ -98,7 +104,7 @@ Um Betrugs-Links zu erkennen, lädt Klyx alle paar Stunden öffentliche Listen b
 
 ## 2. Inhalte, die Klyx auf deinem Server postet
 
-Schaltet ein Server-Admin das Server-Log oder das Moderations-Protokoll ein, postet Klyx Embeds in den vom Admin gewählten Log-Kanal. Diese können den Text gelöschter oder bearbeiteter Nachrichten, AutoMod-Treffer und Moderationsaktionen enthalten. Diese Inhalte bleiben auf diesem Discord-Server und werden von dessen Admins kontrolliert. Beim Schließen eines Tickets wird ein Textprotokoll in den vom Admin gewählten Log-Kanal gepostet und von Klyx nicht aufbewahrt.
+Schaltet ein Server-Admin das Server-Log oder das Moderations-Protokoll ein, postet Klyx Embeds in den vom Admin gewählten Log-Kanal. Diese können den Text gelöschter oder bearbeiteter Nachrichten, AutoMod-Treffer und Moderationsaktionen enthalten. Diese Inhalte bleiben auf diesem Discord-Server und werden von dessen Admins kontrolliert. Beim Schließen eines Tickets wird ein Textprotokoll in den vom Admin gewählten Log-Kanal gepostet und von Klyx nicht aufbewahrt. Meldet ein Mitglied eine Nachricht, postet Klyx deren Text, den Autor und einen Link dazu in den vom Admin gewählten Meldekanal.
 
 ## 3. Dashboard-Login
 
