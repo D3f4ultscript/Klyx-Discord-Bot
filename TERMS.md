@@ -1,6 +1,6 @@
 # Klyx Terms of Service
 
-**Last updated: November 16, 2026**
+**Last updated: November 17, 2026**
 
 By adding Klyx to a Discord server or using the Klyx dashboard you agree to these terms. If you do not agree, remove Klyx from your server and stop using the dashboard. Klyx is operated by D3f4ultscript.
 
@@ -19,7 +19,7 @@ Klyx is a free Discord bot with moderation, giveaways, levels, tickets and other
 
 ## 3. Server admins
 
-Server admins decide how Klyx is configured on their server and are responsible for the moderation actions taken there, including automatic actions from AutoMod and warning limits. Tell your members that Klyx is used on your server where the law requires it.
+Server admins decide how Klyx is configured on their server and are responsible for the moderation actions taken there, including automatic actions from AutoMod, warning limits and the security features (anti-nuke, anti-raid, verification, scam link filter, quarantine, panic mode). Security features can punish members, lock channels and recreate roles and channels on their own. Check the settings before you turn them on and keep the list of trusted members short. Backups only recreate roles and channels that are missing and cannot bring back members or messages. Tell your members that Klyx is used on your server where the law requires it.
 
 ## 4. Availability
 
@@ -49,7 +49,7 @@ These terms can change when Klyx changes. Using Klyx after a change means you ac
 
 # Klyx Nutzungsbedingungen
 
-**Stand: 16. November 2026**
+**Stand: 17. November 2026**
 
 Wenn du Klyx zu einem Discord-Server hinzufügst oder das Klyx-Dashboard nutzt, stimmst du diesen Bedingungen zu. Wenn du nicht zustimmst, entferne Klyx von deinem Server und nutze das Dashboard nicht. Betreiber von Klyx ist D3f4ultscript.
 
@@ -68,7 +68,7 @@ Klyx ist ein kostenloser Discord-Bot mit Moderation, Gewinnspielen, Levels, Tick
 
 ## 3. Server-Admins
 
-Server-Admins entscheiden, wie Klyx auf ihrem Server eingestellt ist, und sind für die dort ergriffenen Moderationsmaßnahmen verantwortlich, auch für automatische Aktionen von AutoMod und Warn-Limits. Informiere deine Mitglieder, dass Klyx auf deinem Server genutzt wird, wo das Gesetz es verlangt.
+Server-Admins entscheiden, wie Klyx auf ihrem Server eingestellt ist, und sind für die dort ergriffenen Moderationsmaßnahmen verantwortlich, auch für automatische Aktionen von AutoMod, Warn-Limits und den Sicherheitsfunktionen (Anti-Nuke, Anti-Raid, Verifizierung, Betrugs-Link-Filter, Quarantäne, Panik-Modus). Sicherheitsfunktionen können selbstständig Mitglieder bestrafen, Kanäle sperren und Rollen und Kanäle neu erstellen. Prüfe die Einstellungen, bevor du sie einschaltest, und halte die Liste vertrauenswürdiger Mitglieder kurz. Backups erstellen nur fehlende Rollen und Kanäle neu und können keine Mitglieder oder Nachrichten zurückholen. Informiere deine Mitglieder, dass Klyx auf deinem Server genutzt wird, wo das Gesetz es verlangt.
 
 ## 4. Verfügbarkeit
 
