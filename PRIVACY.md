@@ -15,8 +15,14 @@ Klyx only stores what it needs to work.
 | Server settings | To run the features an admin turned on | Channel IDs, role IDs, message templates, filter lists, language |
 | Warnings | Moderation | User ID, moderator ID, reason, time, server ID |
 | Levels | XP and level system, rank cards and the leaderboard | User ID, XP, level, server ID, display name and avatar link (for the leaderboard). XP can come from messages, voice time and reactions, depending on the server settings. Voice time and reactions are only counted, not stored |
-| Giveaways | Run giveaways | Prize, channel and message IDs, host ID, the IDs of members who entered, winner IDs |
-| Tickets | Support tickets | Server ID, channel ID, user ID, status, time |
+| Giveaways | Run giveaways | Prize, channel and message IDs, host ID, requirements set by the host, the IDs of members who entered, winner IDs |
+| Invite tracker | Show who invited whom, if the admin turned it on | Server ID, the joining user's ID, the inviter's ID, invite code, join time, whether the member left, whether the account counted as new. Bonus invites given by admins |
+| Birthdays | Congratulate members | Server ID, user ID, day and month (no year). Saved only when the member uses `/birthday set`, deleted with `/birthday remove` |
+| Reputation | Points members give each other | Server ID, user ID, points. Who gave a point to whom and when, kept for 8 days for the cooldown |
+| Highlights | DM a member when a word they follow is said | Server ID, user ID, the words the member added |
+| Counting | The counting game | Server ID, current number, best number, the ID of the last member who counted |
+| Temporary voice channels | Delete them when they are empty | Channel ID, server ID, owner ID, creation time |
+| Tickets | Support tickets | Server ID, channel ID, user ID, ticket number and type, who claimed it, status, open and close time, close reason, the star rating if the member gave one |
 | Reminders | `/remind` | User ID, channel ID, reminder text, time |
 | Reaction roles | Give roles for reactions | Server ID, message ID, emoji, role ID |
 | Moderation cases | Case numbers and moderation history | Server ID, user ID, moderator ID, action, reason, time |
@@ -36,7 +42,9 @@ To detect scam links, Klyx downloads public lists of known scam domains every fe
 
 ## 2. Content that Klyx posts to your server
 
-If a server admin turns on the server log or the moderation log, Klyx posts embeds to the log channel the admin chose. These can contain the text of deleted or edited messages, AutoMod hits and moderation actions. This content stays inside that Discord server and is controlled by the server's admins. When a ticket is closed, a text transcript is posted to the log channel chosen by the admin and is not kept by Klyx. When a member reports a message, Klyx posts its text, author and a link to it in the report channel chosen by the admin.
+If a server admin turns on the server log or the moderation log, Klyx posts embeds to the log channel the admin chose. These can contain the text of deleted or edited messages, AutoMod hits and moderation actions. This content stays inside that Discord server and is controlled by the server's admins. When a ticket is closed, a text transcript is posted to the log channel chosen by the admin and is not kept by Klyx. When a member reports a message, Klyx posts its text, author and a link to it in the report channel chosen by the admin. Answers to ticket questions and forms are posted in the channel chosen by the admin and are not kept by Klyx. If the admin turned it on, the member also gets the ticket transcript by DM.
+
+Feeds: if an admin adds an RSS or YouTube feed, Klyx loads that public address every 15 minutes and stores only an ID of each post it has seen, for 60 days.
 
 ## 3. Dashboard login
 
@@ -87,8 +95,14 @@ Klyx speichert nur, was es zum Funktionieren braucht.
 | Server-Einstellungen | Funktionen, die ein Admin eingeschaltet hat | Kanal-IDs, Rollen-IDs, Nachrichtenvorlagen, Filterlisten, Sprache |
 | Verwarnungen | Moderation | Nutzer-ID, Moderator-ID, Grund, Zeit, Server-ID |
 | Levels | XP- und Level-System, Rang-Karten und Bestenliste | Nutzer-ID, XP, Level, Server-ID, Anzeigename und Avatar-Link (für die Bestenliste). XP kann je nach Server-Einstellung aus Nachrichten, Voice-Zeit und Reaktionen kommen. Voice-Zeit und Reaktionen werden nur gezählt, nicht gespeichert |
-| Gewinnspiele | Gewinnspiele durchführen | Preis, Kanal- und Nachrichten-IDs, Veranstalter-ID, IDs der Teilnehmer, Gewinner-IDs |
-| Tickets | Support-Tickets | Server-ID, Kanal-ID, Nutzer-ID, Status, Zeit |
+| Gewinnspiele | Gewinnspiele durchführen | Preis, Kanal- und Nachrichten-IDs, Veranstalter-ID, vom Veranstalter gesetzte Anforderungen, IDs der Teilnehmer, Gewinner-IDs |
+| Einladungs-Tracker | Zeigen, wer wen eingeladen hat, wenn der Admin das eingeschaltet hat | Server-ID, ID des beitretenden Nutzers, ID des Einladenden, Einladungscode, Beitrittszeit, ob das Mitglied gegangen ist, ob der Account als neu zählte. Bonus-Einladungen, die Admins vergeben |
+| Geburtstage | Mitgliedern gratulieren | Server-ID, Nutzer-ID, Tag und Monat (kein Jahr). Nur gespeichert, wenn das Mitglied `/birthday set` nutzt, gelöscht mit `/birthday remove` |
+| Reputation | Punkte, die Mitglieder sich gegenseitig geben | Server-ID, Nutzer-ID, Punkte. Wer wem wann einen Punkt gegeben hat, 8 Tage lang für den Cooldown |
+| Highlights | Einem Mitglied eine DM senden, wenn ein Wort fällt, dem es folgt | Server-ID, Nutzer-ID, die Wörter, die das Mitglied hinzugefügt hat |
+| Zählen | Das Zählspiel | Server-ID, aktuelle Zahl, Rekord, ID des Mitglieds, das zuletzt gezählt hat |
+| Temporäre Sprachkanäle | Sie löschen, wenn sie leer sind | Kanal-ID, Server-ID, Besitzer-ID, Erstellzeit |
+| Tickets | Support-Tickets | Server-ID, Kanal-ID, Nutzer-ID, Ticketnummer und Art, wer es übernommen hat, Status, Öffnungs- und Schließzeit, Schließgrund, die Sterne-Bewertung, falls das Mitglied eine abgegeben hat |
 | Erinnerungen | `/remind` | Nutzer-ID, Kanal-ID, Erinnerungstext, Zeit |
 | Reaktionsrollen | Rollen für Reaktionen vergeben | Server-ID, Nachrichten-ID, Emoji, Rollen-ID |
 | Moderations-Fälle | Fallnummern und Moderations-Akte | Server-ID, Nutzer-ID, Moderator-ID, Aktion, Grund, Zeit |
@@ -108,7 +122,9 @@ Um Betrugs-Links zu erkennen, lädt Klyx alle paar Stunden öffentliche Listen b
 
 ## 2. Inhalte, die Klyx auf deinem Server postet
 
-Schaltet ein Server-Admin das Server-Log oder das Moderations-Protokoll ein, postet Klyx Embeds in den vom Admin gewählten Log-Kanal. Diese können den Text gelöschter oder bearbeiteter Nachrichten, AutoMod-Treffer und Moderationsaktionen enthalten. Diese Inhalte bleiben auf diesem Discord-Server und werden von dessen Admins kontrolliert. Beim Schließen eines Tickets wird ein Textprotokoll in den vom Admin gewählten Log-Kanal gepostet und von Klyx nicht aufbewahrt. Meldet ein Mitglied eine Nachricht, postet Klyx deren Text, den Autor und einen Link dazu in den vom Admin gewählten Meldekanal.
+Schaltet ein Server-Admin das Server-Log oder das Moderations-Protokoll ein, postet Klyx Embeds in den vom Admin gewählten Log-Kanal. Diese können den Text gelöschter oder bearbeiteter Nachrichten, AutoMod-Treffer und Moderationsaktionen enthalten. Diese Inhalte bleiben auf diesem Discord-Server und werden von dessen Admins kontrolliert. Beim Schließen eines Tickets wird ein Textprotokoll in den vom Admin gewählten Log-Kanal gepostet und von Klyx nicht aufbewahrt. Meldet ein Mitglied eine Nachricht, postet Klyx deren Text, den Autor und einen Link dazu in den vom Admin gewählten Meldekanal. Antworten auf Ticket-Fragen und Formulare werden in den vom Admin gewählten Kanal gepostet und von Klyx nicht aufbewahrt. Hat der Admin das eingeschaltet, bekommt das Mitglied das Ticket-Protokoll zusätzlich per DM.
+
+Feeds: Fügt ein Admin einen RSS- oder YouTube-Feed hinzu, lädt Klyx diese öffentliche Adresse alle 15 Minuten und speichert nur eine ID jedes gesehenen Beitrags, für 60 Tage.
 
 ## 3. Dashboard-Login
 
