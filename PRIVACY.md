@@ -14,7 +14,7 @@ Klyx only stores what it needs to work.
 |---|---|---|
 | Server settings | To run the features an admin turned on | Channel IDs, role IDs, message templates, filter lists, language |
 | Warnings | Moderation | User ID, moderator ID, reason, time, server ID |
-| Levels | XP and level system | User ID, XP, level, server ID |
+| Levels | XP and level system, rank cards and the leaderboard | User ID, XP, level, server ID, display name and avatar link (for the leaderboard). XP can come from messages, voice time and reactions, depending on the server settings. Voice time and reactions are only counted, not stored |
 | Giveaways | Run giveaways | Prize, channel and message IDs, host ID, the IDs of members who entered, winner IDs |
 | Tickets | Support tickets | Server ID, channel ID, user ID, status, time |
 | Reminders | `/remind` | User ID, channel ID, reminder text, time |
@@ -29,6 +29,8 @@ Klyx only stores what it needs to work.
 | Server backups | Rebuild roles and channels after an attack | Names, permissions and settings of roles, categories and channels. No members and no messages. Klyx keeps the last 5 per server |
 
 Klyx does **not** store the content of chat messages in its database. Messages are read in memory to run AutoMod, the scam link filter and the level system and are discarded afterwards.
+
+If a server admin turns on the public leaderboard, the top 100 members of that server are shown on the Klyx website with display name, avatar, level and XP. Anyone with the link can see this page. Welcome picture cards are made on the fly from the member's avatar and name and are not stored.
 
 To detect scam links, Klyx downloads public lists of known scam domains every few hours. Nothing about your server or your members is sent anywhere for this check. Captcha and math answers for verification only live in memory for a few minutes. To protect servers from attacks, Klyx reads the server's audit log (who banned, kicked, deleted or created what) while it happens and only keeps it in memory for a few minutes.
 
@@ -48,7 +50,7 @@ Klyx does not sell data and does not share it with third parties. Data is proces
 
 ## 5. How long data is kept
 
-Data is kept while Klyx is on the server or until it is deleted. Warnings, levels and reminders can be removed by server moderators with the bot commands, for example `/delwarn`, `/clearwarnings`, or by removing Klyx from the server and requesting deletion.
+Data is kept while Klyx is on the server or until it is deleted. Warnings, levels and reminders can be removed by server moderators with the bot commands, for example `/delwarn`, `/clearwarnings`, `/xp reset`, or by removing Klyx from the server and requesting deletion.
 
 ## 6. Your rights and deletion
 
@@ -84,7 +86,7 @@ Klyx speichert nur, was es zum Funktionieren braucht.
 |---|---|---|
 | Server-Einstellungen | Funktionen, die ein Admin eingeschaltet hat | Kanal-IDs, Rollen-IDs, Nachrichtenvorlagen, Filterlisten, Sprache |
 | Verwarnungen | Moderation | Nutzer-ID, Moderator-ID, Grund, Zeit, Server-ID |
-| Levels | XP- und Level-System | Nutzer-ID, XP, Level, Server-ID |
+| Levels | XP- und Level-System, Rang-Karten und Bestenliste | Nutzer-ID, XP, Level, Server-ID, Anzeigename und Avatar-Link (für die Bestenliste). XP kann je nach Server-Einstellung aus Nachrichten, Voice-Zeit und Reaktionen kommen. Voice-Zeit und Reaktionen werden nur gezählt, nicht gespeichert |
 | Gewinnspiele | Gewinnspiele durchführen | Preis, Kanal- und Nachrichten-IDs, Veranstalter-ID, IDs der Teilnehmer, Gewinner-IDs |
 | Tickets | Support-Tickets | Server-ID, Kanal-ID, Nutzer-ID, Status, Zeit |
 | Erinnerungen | `/remind` | Nutzer-ID, Kanal-ID, Erinnerungstext, Zeit |
@@ -99,6 +101,8 @@ Klyx speichert nur, was es zum Funktionieren braucht.
 | Server-Backups | Rollen und Kanäle nach einem Angriff wiederherstellen | Namen, Rechte und Einstellungen von Rollen, Kategorien und Kanälen. Keine Mitglieder und keine Nachrichten. Klyx behält die letzten 5 pro Server |
 
 Klyx speichert den Inhalt von Chat-Nachrichten **nicht** in der Datenbank. Nachrichten werden im Arbeitsspeicher für AutoMod, den Betrugs-Link-Filter und das Level-System gelesen und danach verworfen.
+
+Schaltet ein Server-Admin die öffentliche Bestenliste ein, werden die Top 100 Mitglieder dieses Servers mit Anzeigename, Avatar, Level und XP auf der Klyx-Website gezeigt. Jeder mit dem Link kann diese Seite sehen. Willkommens-Bildkarten werden beim Beitritt aus Avatar und Name erzeugt und nicht gespeichert.
 
 Um Betrugs-Links zu erkennen, lädt Klyx alle paar Stunden öffentliche Listen bekannter Betrugs-Domains herunter. Dabei wird nichts über deinen Server oder deine Mitglieder irgendwohin gesendet. Captcha- und Rechen-Antworten zur Verifizierung liegen nur ein paar Minuten im Arbeitsspeicher. Um Server vor Angriffen zu schützen, liest Klyx das Audit-Log des Servers (wer was gebannt, gekickt, gelöscht oder erstellt hat) in dem Moment, in dem es passiert, und behält es nur ein paar Minuten im Arbeitsspeicher.
 
@@ -118,7 +122,7 @@ Klyx verkauft keine Daten und gibt sie nicht an Dritte weiter. Die Daten werden 
 
 ## 5. Wie lange Daten gespeichert werden
 
-Daten bleiben gespeichert, solange Klyx auf dem Server ist oder bis sie gelöscht werden. Verwarnungen, Levels und Erinnerungen können Server-Moderatoren mit Bot-Befehlen entfernen, zum Beispiel `/delwarn`, `/clearwarnings`, oder indem Klyx vom Server entfernt und die Löschung beantragt wird.
+Daten bleiben gespeichert, solange Klyx auf dem Server ist oder bis sie gelöscht werden. Verwarnungen, Levels und Erinnerungen können Server-Moderatoren mit Bot-Befehlen entfernen, zum Beispiel `/delwarn`, `/clearwarnings`, `/xp reset`, oder indem Klyx vom Server entfernt und die Löschung beantragt wird.
 
 ## 6. Deine Rechte und Löschung
 
