@@ -22,7 +22,9 @@ Klyx only stores what it needs to work.
 | Highlights | DM a member when a word they follow is said | Server ID, user ID, the words the member added |
 | Counting | The counting game | Server ID, current number, best number, the ID of the last member who counted |
 | Temporary voice channels | Delete them when they are empty | Channel ID, server ID, owner ID, creation time |
-| Tickets | Support tickets | Server ID, channel ID, user ID, ticket number and type, who claimed it, status, open and close time, close reason, the star rating if the member gave one |
+| Tickets | Support tickets | Server ID, channel ID, user ID, ticket number and type, who claimed it, who closed it, who answered first and when, priority, status, open and close time, close reason, the star rating and the optional rating comment if the member gave one |
+| Suggestions | Collect ideas and let members vote | Server ID, user ID of the author, the suggestion text, time, status and decision reason, and each member's vote (user ID, up or down) |
+| Honeypot | Catch scam bots in a trap channel, if the admin turned it on | Server ID, user ID, channel ID, time, action taken, and the first 500 characters of the message. Deleted after 180 days |
 | Reminders | `/remind` | User ID, channel ID, reminder text, time |
 | Reaction roles | Give roles for reactions | Server ID, message ID, emoji, role ID |
 | Moderation cases | Case numbers and moderation history | Server ID, user ID, moderator ID, action, reason, time |
@@ -102,7 +104,9 @@ Klyx speichert nur, was es zum Funktionieren braucht.
 | Highlights | Einem Mitglied eine DM senden, wenn ein Wort fällt, dem es folgt | Server-ID, Nutzer-ID, die Wörter, die das Mitglied hinzugefügt hat |
 | Zählen | Das Zählspiel | Server-ID, aktuelle Zahl, Rekord, ID des Mitglieds, das zuletzt gezählt hat |
 | Temporäre Sprachkanäle | Sie löschen, wenn sie leer sind | Kanal-ID, Server-ID, Besitzer-ID, Erstellzeit |
-| Tickets | Support-Tickets | Server-ID, Kanal-ID, Nutzer-ID, Ticketnummer und Art, wer es übernommen hat, Status, Öffnungs- und Schließzeit, Schließgrund, die Sterne-Bewertung, falls das Mitglied eine abgegeben hat |
+| Tickets | Support-Tickets | Server-ID, Kanal-ID, Nutzer-ID, Ticketnummer und Art, wer es übernommen hat, wer es geschlossen hat, wer zuerst geantwortet hat und wann, Priorität, Status, Öffnungs- und Schließzeit, Schließgrund, die Sterne-Bewertung und der freiwillige Bewertungs-Kommentar, falls das Mitglied sie abgegeben hat |
+| Vorschläge | Ideen sammeln und abstimmen lassen | Server-ID, Nutzer-ID des Autors, Text des Vorschlags, Zeit, Status und Grund der Entscheidung sowie die Stimme jedes Mitglieds (Nutzer-ID, dafür oder dagegen) |
+| Honeypot | Scam-Bots in einem Fallen-Kanal erwischen, wenn der Admin das eingeschaltet hat | Server-ID, Nutzer-ID, Kanal-ID, Zeit, ergriffene Aktion und die ersten 500 Zeichen der Nachricht. Nach 180 Tagen gelöscht |
 | Erinnerungen | `/remind` | Nutzer-ID, Kanal-ID, Erinnerungstext, Zeit |
 | Reaktionsrollen | Rollen für Reaktionen vergeben | Server-ID, Nachrichten-ID, Emoji, Rollen-ID |
 | Moderations-Fälle | Fallnummern und Moderations-Akte | Server-ID, Nutzer-ID, Moderator-ID, Aktion, Grund, Zeit |
